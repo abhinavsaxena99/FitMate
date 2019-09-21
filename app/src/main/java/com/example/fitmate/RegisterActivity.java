@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -26,9 +28,10 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEmail;
     private EditText mPassword;
     private Button mCreateBtn;
-
+    DatabaseReference reff;
     private ProgressDialog mRegProgress;
-
+    EditText age;
+    User user;
 
 //    private Toolbar mToolBar;
 
@@ -54,7 +57,8 @@ public class RegisterActivity extends AppCompatActivity {
         mEmail=findViewById(R.id.reg_email);
         mPassword=findViewById(R.id.reg_password);
         mCreateBtn=findViewById(R.id.reg_create_btn);
-
+        age=findViewById(R.id.age);
+        reff= FirebaseDatabase.getInstance().getReference().child("User");
         mCreateBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -62,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String display_name=mDisplayName.getText().toString();
                 String email=mEmail.getText().toString();
                 String password=mPassword.getText().toString();
+                int ageint=Integer.parseInt(age.getText().toString());
 
                 if(!TextUtils.isEmpty(display_name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password )){
 
@@ -69,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
                     mRegProgress.setMessage("Please wait while we create your account.");
                     mRegProgress.setCanceledOnTouchOutside(false);
                     mRegProgress.show();
-                    register_user(display_name,email,password);
+                    register_user(display_name,email,password,ageint);
 
                 }
 
@@ -77,12 +82,18 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void register_user(String display_name, String email, String password) {
+    private void register_user(final String display_name, final String email, String password,final int age) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
+                            user = new User();
+                            user.name=display_name;
+                            user.age=age;
+                            user.email=email;
+                            reff.push().setValue(user); //IMPORTANT I ADDED THIS!! make sure fb database is in dependencies
 
                             mRegProgress.dismiss();
 
