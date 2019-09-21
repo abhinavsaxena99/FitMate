@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "729575534719-njlhn9ivdt209m3ugn9kel0kghh96hec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitmate",
+            "certificate_hash": "0daf45904ac2e3804b8ddb2555ca2e4fd6b3dd92"
+          }
+        },
+        {
           "client_id": "729575534719-cvg5q34l0btj07dhm9u74enq8phuma25.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
