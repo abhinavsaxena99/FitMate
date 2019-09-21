@@ -115,7 +115,8 @@ public class Sleep extends Fragment {
                         exm="0"+exm;
                     if(hour<10)
                         exh="0"+exh;
-                    sleeptime.setText(exh+":"+exm);
+                    String time12 =  ((hour > 12) ? hour % 12 : hour) + ":" + (min < 10 ? ("0" + min) : min) + " " + ((hour >= 12) ? "PM" : "AM");
+                    sleeptime.setText(time12);
                 }
 
             }
