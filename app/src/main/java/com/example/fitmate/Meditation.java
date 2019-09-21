@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import com.example.fitmate.ui.main.SectionsPagerAdapter;
 
@@ -32,28 +33,35 @@ public class Meditation extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.meditation, container, false);
+        final View rootView = inflater.inflate(R.layout.meditation, container, false);
 
-//        Button min5=rootView.findViewById(R.id.min5);
-//        min5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"; // your URL here
-//                final MediaPlayer mediaPlayer = new MediaPlayer();
-//                mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-//                try {
-//                    mediaPlayer.setDataSource(url);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                try {
-//                    mediaPlayer.prepare(); // might take long! (for buffering, etc)
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//                mediaPlayer.start();
-//            }
-//        });
+        Button play=rootView.findViewById(R.id.play);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Spinner spinner=rootView.findViewById(R.id.spinner);
+                String text=spinner.getSelectedItem().toString();
+                String url;
+                if(text.equals("5 minutes"))
+                    url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"; // your URL here
+                else
+                    url="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+
+                final MediaPlayer mediaPlayer = new MediaPlayer();
+                mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                try {
+                    mediaPlayer.setDataSource(url);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    mediaPlayer.prepare(); // might take long! (for buffering, etc)
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                mediaPlayer.start();
+            }
+        });
 
         return rootView;
     }
