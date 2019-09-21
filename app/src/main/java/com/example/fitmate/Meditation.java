@@ -45,7 +45,7 @@ public class Meditation extends Fragment {
                 if(text.equals("5 minutes"))
                     url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"; // your URL here
                 else
-                    url="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+                    url="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3";
 
                 final MediaPlayer mediaPlayer = new MediaPlayer();
                 mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
