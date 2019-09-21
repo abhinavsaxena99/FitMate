@@ -30,26 +30,29 @@ import java.io.IOException;
 
 public class Meditation extends Fragment {
 
+    MediaPlayer mPlayer2;
     @Nullable
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.meditation, container, false);
-
         ImageButton play=rootView.findViewById(R.id.play);
+
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Spinner spinner=rootView.findViewById(R.id.spinner);
                 String text=spinner.getSelectedItem().toString();
-                MediaPlayer mPlayer2;
+
                 if(text.equals("5 minutes")) {
+//                    MediaPlayer mPlayer2;
                     mPlayer2= MediaPlayer.create(getContext(), R.raw.song1);
                     mPlayer2.start();
 
                 }
                 else if(text.equals("10 minutes")) {
+//                    MediaPlayer mPlayer2;
                     mPlayer2= MediaPlayer.create(getContext(), R.raw.song2);
                     mPlayer2.start();
 
@@ -61,7 +64,13 @@ public class Meditation extends Fragment {
 //                }
             }
         });
-
+        ImageButton stop=rootView.findViewById(R.id.stop);
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPlayer2.stop();
+            }
+        });
         return rootView;
     }
 }
