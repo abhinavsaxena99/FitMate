@@ -2,4 +2,8 @@
     <string name="app_name">FitMate</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="need_a_new_account">NEED A NEW ACCOUNT ?</string>
+    <string name="create_account">Create Account</string>
+    <string name="display_name">Display Name</string>
+    <string name="email">Email</string>
 </resources>
