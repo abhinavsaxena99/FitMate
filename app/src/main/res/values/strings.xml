@@ -7,6 +7,10 @@
     <string name="display_name">Display Name</string>
     <string name="email">Email</string>
     <string name="log_out">Log Out</string>
+    <string name="login_to_your_account">LOGIN TO YOUR ACCOUNT</string>
+    <string name="login">LOGIN</string>
+    <string name="fitmate">FITMATE</string>
+    <string name="fitmate">FITMATE</string>
     <string-array name="durations">
         <item>5 minutes</item>
         <item>10 minutes</item>
