@@ -57,11 +57,11 @@ public class Meditation extends Fragment {
                     mPlayer2.start();
 
                 }
-//                else if(text.equals("15 minutes")) {
-//                    mPlayer2= MediaPlayer.create(this, R.raw.song1);
-//                    mPlayer2.start();
-//
-//                }
+                else if(text.equals("15 minutes")) {
+                    mPlayer2= MediaPlayer.create(getContext(), R.raw.song2);
+                    mPlayer2.start();
+
+                }
             }
         });
         ImageButton stop=rootView.findViewById(R.id.stop);
