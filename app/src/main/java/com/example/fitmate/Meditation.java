@@ -34,26 +34,26 @@ public class Meditation extends Fragment {
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.meditation, container, false);
 
-        Button min5=rootView.findViewById(R.id.min5);
-        min5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"; // your URL here
-                final MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                try {
-                    mediaPlayer.setDataSource(url);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    mediaPlayer.prepare(); // might take long! (for buffering, etc)
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                mediaPlayer.start();
-            }
-        });
+//        Button min5=rootView.findViewById(R.id.min5);
+//        min5.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"; // your URL here
+//                final MediaPlayer mediaPlayer = new MediaPlayer();
+//                mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+//                try {
+//                    mediaPlayer.setDataSource(url);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                try {
+//                    mediaPlayer.prepare(); // might take long! (for buffering, etc)
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                mediaPlayer.start();
+//            }
+//        });
 
         return rootView;
     }

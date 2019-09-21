@@ -2,8 +2,13 @@
     <string name="app_name">FitMate</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-    <string name="need_a_new_account">NEED A NEW ACCOUNT ?</string>
+    <string name="need_a_new_account">Sign up</string>
     <string name="create_account">Create Account</string>
     <string name="display_name">Display Name</string>
     <string name="email">Email</string>
+    <string-array name="durations">
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>15 minutes</item>
+    </string-array>
 </resources>
