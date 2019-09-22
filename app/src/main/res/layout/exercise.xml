@@ -13,30 +13,30 @@
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:text="@string/link1"
+        android:textColorLink="#512da7"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082"
-        android:textColorLink="#512da7"/>
+        app:layout_constraintVertical_bias="0.047" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="@string/link3"
         android:clickable="true"
+        android:text="@string/link3"
+        android:textColorLink="#512da7"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283"
-        android:textColorLink="#512da7"/>
+        app:layout_constraintVertical_bias="0.248" />
 
     <TextView
         android:id="@+id/textView5"
@@ -44,14 +44,14 @@
         android:layout_height="40dp"
         android:layout_marginTop="100dp"
         android:text="@string/link5"
+        android:textColorLink="#512da7"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.509"
-        android:textColorLink="#512da7"/>
+        app:layout_constraintVertical_bias="0.472" />
 
     <TextView
         android:id="@+id/textView2"
@@ -59,14 +59,14 @@
         android:layout_height="40dp"
         android:layout_marginTop="55dp"
         android:text="@string/link2"
+        android:textColorLink="#512da7"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174"
-        android:textColorLink="#512da7"/>
+        app:layout_constraintVertical_bias="0.139" />
 
     <TextView
         android:id="@+id/textView4"
@@ -74,14 +74,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="85dp"
         android:text="@string/link4"
+        android:textColorLink="#512da7"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395"
-        android:textColorLink="#512da7"/>
+        app:layout_constraintVertical_bias="0.358" />
 
     <TextView
         android:id="@+id/textView6"
@@ -89,12 +89,25 @@
         android:layout_height="40dp"
         android:layout_marginTop="115dp"
         android:text="@string/link6"
+        android:textColorLink="#512da7"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.628"
-        android:textColorLink="#512da7"/>
+        app:layout_constraintVertical_bias="0.59" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.126"
+        app:srcCompat="@drawable/exercise" />
 </androidx.constraintlayout.widget.ConstraintLayout>
