@@ -1,5 +1,6 @@
 package com.example.fitmate;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.fitmate.ui.main.PageViewModel;
@@ -70,6 +71,7 @@ public class Diet extends Fragment {
         itemlist = new ArrayList<>();
         reff=FirebaseDatabase.getInstance().getReference();
 
+
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -107,29 +109,53 @@ public class Diet extends Fragment {
                 String welcomeagetext="For a "+age+" year old, we recommend the following diet plan:- ";
                 welcomeage.setText(welcomeagetext);
 
-                if(Integer.parseInt(age)<=25)
+                if(Integer.parseInt(age)<20)
                 {
                     HyperLink = (TextView)rootView.findViewById(R.id.textView1);
 
-                    String text = "<a href='https://www.mealplansite.com/age/adolescent.aspx'> For ages < 25 </a>";
-                    HyperLink.setMovementMethod(LinkMovementMethod.getInstance());
-                    HyperLink.setText(Html.fromHtml(text));
+                    String text = "For ages < 20";
+
+                    HyperLink.setText(text);
+
+                    HyperLink.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent startIntent1 = new Intent(getContext(),teen.class);
+                            startActivity(startIntent1);
+                        }
+                    });
                 }
                 else if(Integer.parseInt(age)>=60)
                 {
                     HyperLink = (TextView)rootView.findViewById(R.id.textView1);
 
-                    String text = "<a href='https://www.mealplansite.com/age/elderly.aspx'> For ages > 60 </a>";
-                    HyperLink.setMovementMethod(LinkMovementMethod.getInstance());
-                    HyperLink.setText(Html.fromHtml(text));
+                    String text = "For ages > 60";
+
+                    HyperLink.setText(text);
+
+                    HyperLink.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent startIntent1 = new Intent(getContext(),Old.class);
+                            startActivity(startIntent1);
+                        }
+                    });
                 }
                 else
                 {
                     HyperLink = (TextView)rootView.findViewById(R.id.textView1);
 
-                    String text = "<a href='https://www.mealplansite.com/age/male-adult.aspx'> For ages 25-60 </a>";
-                    HyperLink.setMovementMethod(LinkMovementMethod.getInstance());
-                    HyperLink.setText(Html.fromHtml(text));
+                    String text = "For ages 20-60";
+
+                    HyperLink.setText(text);
+
+                    HyperLink.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent startIntent1 = new Intent(getContext(),Mid.class);
+                            startActivity(startIntent1);
+                        }
+                    });
                 }
 
             }
