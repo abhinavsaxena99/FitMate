@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +28,13 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.fitmate.ui.main.SectionsPagerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -33,6 +43,10 @@ public class Sleep extends Fragment {
     EditText age;
     TextView ettime,sleeptime;
     Button calculate;
+    String agestring;
+    DatabaseReference reff;
+    FirebaseUser user;
+    String uid;
     @Nullable
     @Override
     public View onCreateView(
@@ -121,6 +135,38 @@ public class Sleep extends Fragment {
 
             }
         });
+
+
+
+
+        reff= FirebaseDatabase.getInstance().getReference();
+        user=FirebaseAuth.getInstance().getCurrentUser();
+        uid=user.getUid();
+
+
+        reff.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                agestring=dataSnapshot.child("User").child(uid).child("age").getValue(String.class);
+                age.setText(agestring);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getContext(),"Network Error",Toast.LENGTH_LONG);
+            }
+        });
+
+
+
+
+
+
+
+
         return rootView;
     }
 }
