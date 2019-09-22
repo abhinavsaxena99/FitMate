@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -66,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String display_name=mDisplayName.getText().toString();
                 String email=mEmail.getText().toString();
                 String password=mPassword.getText().toString();
-                int ageint=Integer.parseInt(age.getText().toString());
+                String ageint=age.getText().toString();
 
                 if(!TextUtils.isEmpty(display_name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password )){
 
@@ -82,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void register_user(final String display_name, final String email, String password,final int age) {
+    private void register_user(final String display_name, final String email, String password,final String age) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -93,7 +94,10 @@ public class RegisterActivity extends AppCompatActivity {
                             user.name=display_name;
                             user.age=age;
                             user.email=email;
-                            reff.push().setValue(user); //IMPORTANT I ADDED THIS!! make sure fb database is in dependencies
+
+                            FirebaseUser fb=FirebaseAuth.getInstance().getCurrentUser();
+                            String id = fb.getUid();
+                            reff.child(id).setValue(user); //IMPORTANT I ADDED THIS!! make sure fb database is in dependencies
 
                             mRegProgress.dismiss();
 

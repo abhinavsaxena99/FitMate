@@ -3,7 +3,7 @@ package com.example.fitmate;
 class User {
     public String name;
     public String email;
-    public int age;
+    public String age;
 
     public String getEmail() {
         return email;
@@ -21,11 +21,11 @@ class User {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
