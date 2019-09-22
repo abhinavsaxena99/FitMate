@@ -15,4 +15,17 @@
         <item>10 minutes</item>
         <item>15 minutes</item>
     </string-array>
+    <string name="link1"><a href="https://www.nerdfitness.com/blog/a-beginners-guide-to-the-gym-everything-you-need-to-know/">ABS WORKOUT</a>
+    </string>
+    <string name="link2"><a href="https://www.nerdfitness.com/blog/a-beginners-guide-to-the-gym-everything-you-need-to-know/">BICEPS WORKOUT</a>
+    </string>
+    <string name="link3"><a href="https://www.nerdfitness.com/blog/a-beginners-guide-to-the-gym-everything-you-need-to-know/">CARDIO WORKOUT</a>
+    </string>
+    <string name="link4"><a href="https://www.nerdfitness.com/blog/a-beginners-guide-to-the-gym-everything-you-need-to-know/">TRICEPS WORKOUT</a>
+    </string>
+    <string name="link5"><a href="https://www.nerdfitness.com/blog/a-beginners-guide-to-the-gym-everything-you-need-to-know/">SHOULDER WORKOUT</a>
+    </string>
+    <string name="link6"><a href="https://www.nerdfitness.com/blog/a-beginners-guide-to-the-gym-everything-you-need-to-know/">FULL BODY WORKOUT</a>
+    </string>
+
 </resources>
